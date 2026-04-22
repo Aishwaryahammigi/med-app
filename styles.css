@@ -1,119 +1,68 @@
 body {
-  font-family: Arial, sans-serif;
-  background: #f4f7fb;
+  font-family: Arial;
   margin: 0;
+  background: #f4f6f9;
+}
+
+.header {
+  background: #2f6fed;
+  color: white;
+  padding: 15px;
+  font-size: 22px;
+  text-align: center;
 }
 
 .container {
-  max-width: 600px;
-  margin: auto;
   padding: 20px;
-}
-
-/* Header */
-header {
   text-align: center;
-  background: linear-gradient(135deg, #4a90e2, #357ABD);
+}
+
+input {
+  width: 60%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.search-btn {
+  padding: 10px 20px;
+  background: #2f6fed;
   color: white;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-/* Search Card */
-.search-card {
-  display: flex;
-  margin-top: 20px;
-  gap: 10px;
-}
-
-.search-card input {
-  flex: 1;
-  padding: 12px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-}
-
-.search-card button {
-  padding: 12px 20px;
   border: none;
-  background: #4a90e2;
-  color: white;
-  border-radius: 10px;
   cursor: pointer;
-}
-
-.search-card button:hover {
-  background: #357ABD;
-}
-
-/* Filters */
-.filters {
-  margin-top: 15px;
-  text-align: center;
 }
 
 .filters button {
   margin: 5px;
-  padding: 8px 15px;
-  border-radius: 20px;
+  padding: 8px;
   border: none;
   background: #ddd;
   cursor: pointer;
 }
 
-.filters button:hover {
-  background: #4a90e2;
-  color: white;
+.card {
+  background: white;
+  margin: 10px auto;
+  padding: 15px;
+  width: 60%;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: left;
 }
 
-/* Loader */
 .loader {
-  text-align: center;
-  margin: 15px;
-  font-weight: bold;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #2f6fed;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin: 10px auto;
+  animation: spin 1s linear infinite;
 }
 
 .hidden {
   display: none;
 }
 
-/* Results */
-.results {
-  margin-top: 20px;
-}
-
-/* Card */
-.card {
-  background: white;
-  padding: 15px;
-  border-radius: 12px;
-  margin-bottom: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.card h3 {
-  margin: 0;
-}
-
-.card p {
-  margin: 5px 0;
-}
-
-.card button {
-  margin-top: 10px;
-  padding: 8px 12px;
-  border: none;
-  background: #4CAF50;
-  color: white;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.card button:hover {
-  background: #388E3C;
-}
-
-.empty {
-  text-align: center;
-  color: gray;
+@keyframes spin {
+  100% { transform: rotate(360deg); }
 }
