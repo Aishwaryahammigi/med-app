@@ -1,147 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Medicine Finder</title>
-
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI';
-      background: #eef2f7;
-    }
-
-    .navbar {
-      background: #2b6cb0;
-      color: white;
-      padding: 15px;
-      font-size: 20px;
-      text-align: center;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-    }
-
-    .search-box {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-
-    input {
-      flex: 1;
-      padding: 12px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-    }
-
-    button {
-      padding: 12px 20px;
-      border: none;
-      border-radius: 8px;
-      background: #c5d3e1;
-      color: white;
-      cursor: pointer;
-    }
-
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      margin-top: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-
-    .soldout {
-      color: red;
-      font-weight: bold;
-    }
-
-    .notify-btn {
-      margin-top: 10px;
-      padding: 10px;
-      width: 100%;
-      background: #e53e3e;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-
-    .shop-list {
-      margin-top: 10px;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <title>Smart Medicine Finder</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-
-  <div class="navbar">💊 Smart Medicine Finder</div>
 
   <div class="container">
 
-    <div class="search-box">
-      <input type="text" id="medicineInput" placeholder="Search medicine...">
+    <!-- Header -->
+    <header>
+      <h1>💊 Smart Medicine Finder</h1>
+      <p>Find medicines near you instantly</p>
+    </header>
+
+    <!-- Search Card -->
+    <div class="search-card">
+      <input type="text" id="searchInput" placeholder="Search medicine...">
       <button onclick="searchMedicine()">Search</button>
     </div>
 
-    <div id="results"></div>
+    <!-- Filters -->
+    <div class="filters">
+      <button onclick="filterDistance(2)">2 km</button>
+      <button onclick="filterDistance(5)">5 km</button>
+      <button onclick="filterDistance(10)">10 km</button>
+    </div>
+
+    <!-- Loader -->
+    <div id="loader" class="loader hidden">Searching...</div>
+
+    <!-- Results -->
+    <div id="results" class="results">
+      <p class="empty">🔍 Start searching for medicines</p>
+    </div>
 
   </div>
 
-<script>
-async function searchMedicine() {
-  const input = document.getElementById("medicineInput").value;
-  const resultsDiv = document.getElementById("results");
-
-  resultsDiv.innerHTML = "🔍 Searching...";
-
-  try {
-    const res = await fetch(`http://localhost:5000/search?name=${input}`);
-    const data = await res.json();
-
-    if (data.status === "available") {
-      resultsDiv.innerHTML = `
-        <div class="card">
-          <h2>${input}</h2>
-          <p>✅ Available</p>
-          <div class="shop-list">
-            ${data.message}
-          </div>
-        </div>
-      `;
-    } 
-    else if (data.status === "alternative") {
-      resultsDiv.innerHTML = `
-        <div class="card">
-          <h2>${input}</h2>
-          <p class="soldout">❌ Sold Out</p>
-          <p>${data.message}</p>
-          <button class="notify-btn" onclick="notifyUser()">Notify Me When Available</button>
-        </div>
-      `;
-    } 
-    else {
-      resultsDiv.innerHTML = `
-        <div class="card">
-          <h2>${input}</h2>
-          <p class="soldout">❌ Not Found</p>
-          <button class="notify-btn" onclick="notifyUser()">Notify Me</button>
-        </div>
-      `;
-    }
-
-  } catch {
-    resultsDiv.innerHTML = "Server error";
-  }
-}
-
-function notifyUser() {
-  alert("You will be notified when the medicine is available!");
-}
-</script>
-
+  <script src="script.js"></script>
 </body>
 </html>
