@@ -21,6 +21,8 @@ input {
   width: 60%;
   padding: 10px;
   margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
 }
 
 .search-btn {
@@ -29,14 +31,16 @@ input {
   color: white;
   border: none;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 .filters button {
   margin: 5px;
-  padding: 8px;
+  padding: 8px 12px;
   border: none;
   background: #ddd;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 .card {
@@ -65,4 +69,11 @@ input {
 
 @keyframes spin {
   100% { transform: rotate(360deg); }
+}
+
+#map {
+  height: 300px;
+  width: 60%;
+  margin: 20px auto;
+  border-radius: 10px;
 }
