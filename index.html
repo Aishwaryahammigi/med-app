@@ -18,17 +18,18 @@
     <input id="searchInput" placeholder="Search medicine..." oninput="showSuggestions()" />
     <div id="suggestions"></div>
 
-    <div class="filters">
-      <button onclick="filterDistance(2)">2 km</button>
-      <button onclick="filterDistance(5)">5 km</button>
-      <button onclick="filterDistance(10)">10 km</button>
-    </div>
-
-    <select id="sortBy" onchange="searchMedicine()">
-      <option value="none">Sort by...</option>
-      <option value="price">Price (Low to High)</option>
-      <option value="distance">Distance (Near to Far)</option>
-    </select>
+    <div class="filters-row">
+      <div class="filters">
+        <button onclick="filterDistance(2)">2 km</button>
+        <button onclick="filterDistance(5)">5 km</button>
+        <button onclick="filterDistance(10)">10 km</button>
+      </div>
+      <select id="sortBy" onchange="searchMedicine()">
+        <option value="none">Sort by...</option>
+        <option value="price">Price (Low to High)</option>
+        <option value="distance">Distance (Near to Far)</option>
+      </select>
+      </div>
 
     <button class="search-btn" onclick="searchMedicine()">Search</button>
 

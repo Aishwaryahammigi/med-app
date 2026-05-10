@@ -224,3 +224,15 @@ footer {
   opacity: 0.85;
   margin-top: 4px;
 }
+
+.filters-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.filters-row #sortBy {
+  width: auto;
+  margin: 0;
+}
