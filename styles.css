@@ -101,3 +101,20 @@ input {
 #suggestions div:hover {
   background: #f0f0f0;
 }
+
+.badge {
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 10px;
+  float: right;
+}
+
+.in-stock {
+  background: #d4edda;
+  color: #155724;
+}
+
+.out-stock {
+  background: #f8d7da;
+  color: #721c24;
+}

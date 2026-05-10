@@ -93,13 +93,13 @@ function searchMedicine() {
       // UI Card
       resultsDiv.innerHTML += `
         <div class="card">
-          <h3>${m.name}</h3>
+          <h3>${m.name} <span class="badge ${m.distance <= 3 ? 'in-stock' : 'out-stock'}">${m.distance <= 3 ? 'In Stock' : 'Out of Stock'}</span></h3>
           <p>Shop: ${m.shop}</p>
           <p>Distance: ${m.distance} km away</p>
           <p>Price: Rs.${m.price}</p>
         </div>
       `;
-
+      
       // Map Marker
       const marker = L.marker([m.lat, m.lng])
         .addTo(map)
