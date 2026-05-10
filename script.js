@@ -80,7 +80,6 @@ function searchMedicine() {
       m.distance <= selectedDistance
     );
 
-    // Clear old markers
     markers.forEach(m => map.removeLayer(m));
     markers = [];
 
@@ -89,8 +88,9 @@ function searchMedicine() {
       return;
     }
 
+    resultsDiv.innerHTML = `<p class="result-count">Found ${filtered.length} medicine(s)</p>`;
+
     filtered.forEach(m => {
-      // UI Card
       resultsDiv.innerHTML += `
         <div class="card">
           <h3>${m.name} <span class="badge ${m.distance <= 3 ? 'in-stock' : 'out-stock'}">${m.distance <= 3 ? 'In Stock' : 'Out of Stock'}</span></h3>
@@ -99,8 +99,7 @@ function searchMedicine() {
           <p>Price: Rs.${m.price}</p>
         </div>
       `;
-      
-      // Map Marker
+
       const marker = L.marker([m.lat, m.lng])
         .addTo(map)
         .bindPopup(`<b>${m.name}</b><br>${m.shop}`);

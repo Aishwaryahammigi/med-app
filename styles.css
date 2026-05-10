@@ -118,3 +118,9 @@ input {
   background: #f8d7da;
   color: #721c24;
 }
+
+.result-count {
+  color: #2f6fed;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
