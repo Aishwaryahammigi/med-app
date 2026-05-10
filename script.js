@@ -4,7 +4,15 @@ const medicines = [
   { name: "Paracetamol", shop: "Apollo Pharmacy", distance: 2, price: 25, lat: 12.9716, lng: 77.5946 },
   { name: "Crocin", shop: "MedPlus", distance: 5, price: 30, lat: 12.9750, lng: 77.6000 },
   { name: "Dolo 650", shop: "HealthCare Store", distance: 8, price: 35, lat: 12.9800, lng: 77.6100 },
-  { name: "Aspirin", shop: "Wellness Pharmacy", distance: 3, price: 20, lat: 12.9680, lng: 77.5900 }
+  { name: "Aspirin", shop: "Wellness Pharmacy", distance: 3, price: 20, lat: 12.9680, lng: 77.5900 },
+  { name: "Ibuprofen", shop: "Apollo Pharmacy", distance: 4, price: 40, lat: 12.9720, lng: 77.5960 },
+  { name: "Amoxicillin", shop: "MedPlus", distance: 6, price: 85, lat: 12.9760, lng: 77.6020 },
+  { name: "Cetirizine", shop: "1mg Store", distance: 2, price: 15, lat: 12.9700, lng: 77.5930 },
+  { name: "Metformin", shop: "HealthCare Store", distance: 7, price: 45, lat: 12.9810, lng: 77.6120 },
+  { name: "Omeprazole", shop: "Wellness Pharmacy", distance: 3, price: 55, lat: 12.9690, lng: 77.5910 },
+  { name: "Azithromycin", shop: "Apollo Pharmacy", distance: 5, price: 120, lat: 12.9730, lng: 77.5970 },
+  { name: "Vitamin D3", shop: "MedPlus", distance: 4, price: 200, lat: 12.9740, lng: 77.5980 },
+  { name: "Pantoprazole", shop: "1mg Store", distance: 6, price: 65, lat: 12.9770, lng: 77.6030 }
 ];
 
 // Initialize map
