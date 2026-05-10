@@ -217,3 +217,10 @@ footer {
   margin-top: 20px;
   border-top: 1px solid #ddd;
 }
+
+.subtitle {
+  font-size: 14px;
+  font-weight: normal;
+  opacity: 0.85;
+  margin-top: 4px;
+}
