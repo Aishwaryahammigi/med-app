@@ -8,41 +8,56 @@
 </head>
 <body>
 
-  <div class="header">
-    <h1>&#128138; Smart Medicine Finder</h1>
-    <p class="subtitle">Find medicines near you instantly</p>
-  </div>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-brand">&#128138; MediFind</div>
+    <div class="nav-links">
+      <span>Home</span>
+      <span>Medicines</span>
+      <span>Pharmacies</span>
+    </div>
+  </nav>
 
-  <div class="container">
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1>Find Medicines Near You</h1>
+    <p>Search from 1000+ medicines available at nearby pharmacies</p>
 
-    <input id="searchInput" placeholder="Search medicine..." oninput="showSuggestions()" />
+    <div class="search-box">
+      <input id="searchInput" placeholder="Search medicine name..." oninput="showSuggestions()" />
+      <button class="search-btn" onclick="searchMedicine()">&#128269; Search</button>
+    </div>
     <div id="suggestions"></div>
-
-    <div class="filters-row">
-      <div class="filters">
-        <button onclick="filterDistance(2)">2 km</button>
-        <button onclick="filterDistance(5)">5 km</button>
-        <button onclick="filterDistance(10)">10 km</button>
-      </div>
-      <select id="sortBy" onchange="searchMedicine()">
-        <option value="none">Sort by...</option>
-        <option value="price">Price (Low to High)</option>
-        <option value="distance">Distance (Near to Far)</option>
-      </select>
-      </div>
-
-    <button class="search-btn" onclick="searchMedicine()">Search</button>
-
-    <div id="loader" class="loader hidden"></div>
-
-    <div id="results"></div>
-
-    <div id="map"></div>
-
   </div>
+
+  <!-- Filters -->
+  <div class="filter-section">
+    <div class="filters">
+      <span>Distance:</span>
+      <button onclick="filterDistance(2)">2 km</button>
+      <button onclick="filterDistance(5)">5 km</button>
+      <button onclick="filterDistance(10)">10 km</button>
+    </div>
+    <select id="sortBy" onchange="searchMedicine()">
+      <option value="none">Sort by...</option>
+      <option value="price">Price (Low to High)</option>
+      <option value="distance">Distance (Near to Far)</option>
+    </select>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div id="loader" class="loader hidden"></div>
+    <div id="results"></div>
+    <div id="map"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&#128138; MediFind | Developed by Aishwarya Hammigi | DevOps Minor Project 2026</p>
+  </footer>
 
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <script src="script.js"></script>
-
 </body>
 </html>
