@@ -3,7 +3,7 @@
 A DevOps-based web application that helps users find medicines at nearby pharmacies using location-based search.
 
 ## 🚀 Live Demo
-http://13.51.106.185
+http://16.171.117.185
 
 ## 🛠️ Tech Stack
 - **Frontend:** HTML, CSS, JavaScript
