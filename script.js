@@ -59,9 +59,9 @@ function searchMedicine() {
       resultsDiv.innerHTML += `
         <div class="card">
           <h3>${m.name}</h3>
-          <p>🏥 ${m.shop}</p>
-          <p>📍 ${m.distance} km away</p>
-          <p>💰 ₹${m.price}</p>
+          <p>Shop: ${m.shop}</p>
+          <p>Distance: ${m.distance} km away</p>
+          <p>Price: Rs.${m.price}</p>
         </div>
       `;
 
