@@ -11,18 +11,23 @@ http://16.171.117.185
 - **Containerization:** Docker
 - **CI/CD:** GitHub Actions
 - **Registry:** Docker Hub
-- **Deployment:** AWS EC2
+- **Deployment:** AWS EC2 (with Elastic IP)
 
 ## 🏗️ Architecture
-Code Push → GitHub → GitHub Actions → Docker Build → Docker Hub → AWS EC2 → Live App
+Code Push → GitHub → GitHub Actions → Docker Build → Docker Hub → Auto Deploy → AWS EC2 → Live App
 
 ## ✨ Features
 - Search medicines by name
+- Search suggestions (autocomplete)
 - Filter by distance (2km, 5km, 10km)
+- Sort by price or distance
+- Results count display
+- In Stock / Out of Stock badges
 - Interactive map showing pharmacy locations
 - Real-time search results with cards
 - Loading animation
 - Responsive design
+- Auto-deployment on every code push
 
 ## 📦 Docker
 Run the app using Docker:
@@ -34,7 +39,8 @@ On every push to main branch:
 1. GitHub Actions triggers automatically
 2. Docker image is built
 3. Image is pushed to Docker Hub
-4. Deploy on EC2 by pulling latest image
+4. App is automatically deployed to AWS EC2
+5. No manual steps required
 
 ## 🖥️ Local Setup
     git clone https://github.com/Aishwaryahammigi/med-app.git
@@ -52,5 +58,12 @@ Open index.html in browser or use Live Server in VS Code.
         └── workflows/
             └── docker.yml
 
+## 🔐 GitHub Secrets Used
+- DOCKER_USERNAME
+- DOCKER_PASSWORD
+- EC2_HOST
+- EC2_USER
+- EC2_KEY
+
 ## 👩‍💻 Author
-Aishwarya Hammigi
+Aishwarya Hammigi | DevOps Minor Project 2026
