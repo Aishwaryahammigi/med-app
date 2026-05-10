@@ -32,6 +32,38 @@ function filterDistance(d) {
   event.target.classList.add('active');
 }
 
+function showSuggestions() {
+  const input = document.getElementById("searchInput").value.toLowerCase();
+  const suggestionBox = document.getElementById("suggestions");
+  suggestionBox.innerHTML = "";
+
+  if (input.length === 0) {
+    suggestionBox.style.display = "none";
+    return;
+  }
+
+  const matched = medicines.filter(m => 
+    m.name.toLowerCase().startsWith(input)
+  );
+
+  if (matched.length === 0) {
+    suggestionBox.style.display = "none";
+    return;
+  }
+
+  suggestionBox.style.display = "block";
+  matched.forEach(m => {
+    const div = document.createElement("div");
+    div.textContent = m.name;
+    div.onclick = () => {
+      document.getElementById("searchInput").value = m.name;
+      suggestionBox.style.display = "none";
+      searchMedicine();
+    };
+    suggestionBox.appendChild(div);
+  });
+}
+
 function searchMedicine() {
   const input = document.getElementById("searchInput").value.toLowerCase();
   const resultsDiv = document.getElementById("results");

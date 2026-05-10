@@ -82,3 +82,22 @@ input {
   background: #2f6fed;
   color: white;
 }
+
+#suggestions {
+  display: none;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 60%;
+  margin: 0 auto;
+  text-align: left;
+}
+
+#suggestions div {
+  padding: 10px;
+  cursor: pointer;
+}
+
+#suggestions div:hover {
+  background: #f0f0f0;
+}

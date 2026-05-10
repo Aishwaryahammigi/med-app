@@ -14,7 +14,8 @@
 
   <div class="container">
 
-    <input id="searchInput" placeholder="Search medicine..." />
+    <<input id="searchInput" placeholder="Search medicine..." oninput="showSuggestions()" />
+    <div id="suggestions"></div>
 
     <div class="filters">
       <button onclick="filterDistance(2)">2 km</button>
