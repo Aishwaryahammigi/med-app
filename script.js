@@ -88,6 +88,13 @@ function searchMedicine() {
       return;
     }
 
+    const sortBy = document.getElementById("sortBy").value;
+    if (sortBy === "price") {
+      filtered.sort((a, b) => a.price - b.price);
+    } else if (sortBy === "distance") {
+      filtered.sort((a, b) => a.distance - b.distance);
+    }
+
     resultsDiv.innerHTML = `<p class="result-count">Found ${filtered.length} medicine(s)</p>`;
 
     filtered.forEach(m => {

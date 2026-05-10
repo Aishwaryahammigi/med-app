@@ -14,7 +14,7 @@
 
   <div class="container">
 
-    <<input id="searchInput" placeholder="Search medicine..." oninput="showSuggestions()" />
+    <input id="searchInput" placeholder="Search medicine..." oninput="showSuggestions()" />
     <div id="suggestions"></div>
 
     <div class="filters">
@@ -23,6 +23,12 @@
       <button onclick="filterDistance(10)">10 km</button>
     </div>
 
+    <select id="sortBy" onchange="searchMedicine()">
+      <option value="none">Sort by...</option>
+      <option value="price">Price (Low to High)</option>
+      <option value="distance">Distance (Near to Far)</option>
+    </select>
+    
     <button class="search-btn" onclick="searchMedicine()">Search</button>
 
     <div id="loader" class="loader hidden"></div>
