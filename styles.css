@@ -77,3 +77,8 @@ input {
   margin: 20px auto;
   border-radius: 10px;
 }
+
+.filters button.active {
+  background: #2f6fed;
+  color: white;
+}

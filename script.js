@@ -26,7 +26,10 @@ let markers = [];
 
 function filterDistance(d) {
   selectedDistance = d;
-  alert("Filter set to " + d + " km");
+  document.querySelectorAll('.filters button').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  event.target.classList.add('active');
 }
 
 function searchMedicine() {
