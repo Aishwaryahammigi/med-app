@@ -18,6 +18,18 @@ const medicines = [
 // Initialize map
 let map = L.map('map').setView([12.9716, 77.5946], 13);
 
+// Detect user location
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(function(position) {
+    const lat = position.coords.latitude;
+    const lng = position.coords.longitude;
+    map.setView([lat, lng], 13);
+  }, function() {
+    // If user denies location, keep Bangalore as default
+    map.setView([12.9716, 77.5946], 13);
+  });
+}
+
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '© OpenStreetMap'
 }).addTo(map);
